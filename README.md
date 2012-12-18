@@ -135,9 +135,8 @@ The special `Request` and `Response` sections:
      dictionary. Anyway, much of the interesting stuff is in the
      response entity (body), and it is beyond the scope of this to try
      to parameterize formats varying from JSON to XML to
-     whatever. Even though this section is optional for a client FFI,
-     it may be may be helpful to include the section for documentation
-     value.
+     whatever. Having said all that, it may be helpful to include the
+     section for documentation value.
 
    - **Server**: If this is to be used when implementing/documenting
      your own service, do provide a `Response` section. It's helpful
@@ -217,10 +216,11 @@ query parameters, but equally applies to `Key: Value` headers.
 - `Key={}` _or_ `Key={alias}` means that the header or parameter is
    **variable**.
   - Server: Requires _some_ value to be supplied.
-  - Client: An FFI must require client to supply some value. In the
-    client code, the name (e.g. dict key or keyword arg) is `K` when
+  - Client: An FFI must require client to supply some value.  In the
+    client code, the name (e.g. dict key or keyword arg) is `Key` when
     `{}`, otherwise `alias`. (In other words a long header name can be
-    given a shorter alias.)
+    given a shorter alias using `{alias}`, or a shorter header name
+    can be used as-is via `{}`.)
 - `[Key=Value]` means that the **constant** header or parameter is
   **optional**.
   - Server: When the header or parameter is not supplied in the
@@ -267,7 +267,7 @@ The remainder of this document contains sections that fit the
 format. In other words, this markdown document is itself a
 specification for an imaginary web service. Running it through a
 compliant parser should extract the specification of three web service
-functions, "Example Get API", "Example POST API", and "Create Domain".
+functions, `"Example Get"`, `"Example POST"`, and `"Create Domain"`.
 
 ---
 

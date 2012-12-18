@@ -16,9 +16,15 @@ it easier to structure requests and to destructure responses.
 the service. Making it easier to route and destructure requests and
 to structure responses.
 
-This project implements a Racket language parser, FFI, and service
-framework. However the markdown layout and message template is not
-specific to any programming language or style.
+This project describes how the Markdown file specifies a web service,
+and includes `.md` files for various real services.  It is intended to
+be a resource.
+
+> Note: The markdown layout and message template is not specific to
+> any programming language or style. But just for example, see
+> [wffi](https://github.com/greghendershott/wffi) for a Racket
+> language implementation of markdown and template parsers, a client
+> FFI, and a skeleton server FFI.
 
 
 # Quick Start

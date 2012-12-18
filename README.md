@@ -44,7 +44,7 @@ its own line.
 
     Endpoint: http://wherevs.com/api/v1
 
-    Following are the avaialable functions.
+    Following are the available functions.
 
     ...
 

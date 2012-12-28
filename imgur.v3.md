@@ -24,11 +24,12 @@ images for the account that is currently authenticated.
 
 Request standard user information. If you need the username for the
 account that is logged in, it is returned in the request for an
-[access token](/oauth2/#token").
+[access token](/oauth2/#token).
 
 ## Request:
 ````
 GET /account/{username}
+Authorization: {}
 ````
 
 
@@ -45,6 +46,7 @@ Use this as the public captcha key:
 ## Request:
 ````
 POST /account/{username}
+Authorization: {}
 ````
 
 
@@ -56,6 +58,7 @@ the user.
 ## Request:
 ````
 DELETE /account/{username}
+Authorization: {}
 ````
 
 
@@ -66,6 +69,7 @@ Return an array of images that have been upvoted by the user.
 ## Reqest:
 ````
 GET /account/{username}/likes
+Authorization: {}
 ````
 
 
@@ -76,6 +80,7 @@ Return the images a user has submitted to the gallery.
 ## Request:
 ````
 GET /account/{username}/submissions/{page}
+Authorization: {}
 ````
 
 
@@ -86,6 +91,7 @@ Returns the account settings, only accessible if you're logged in as the user.
 ## Request:
 ````
 GET /account/{username}/settings
+Authorization: {}
 ````
 
 
@@ -96,6 +102,7 @@ Return the statistics about the account.
 ## Request:
 ````
 GET /account/{username}/stats
+Authorization: {}
 ````
 
 
@@ -106,6 +113,7 @@ Returns the totals for the gallery profile.
 ## Request:
 ````
 GET /account/{username}/gallery_profile
+Authorization: {}
 ````
 
 
@@ -117,6 +125,7 @@ the user to see secret and hidden albums.
 ## Request:
 ````
 GET /account/{username}/albums/{page}
+Authorization: {}
 ````
 
 ### Parameters
@@ -143,6 +152,7 @@ routes that are used on an album in the Album endpoint.
 ## Request:
 ````
 GET /account/{username}/album/{id}
+Authorization: {}
 ````
 
 
@@ -153,6 +163,7 @@ Return an array of all of the album IDs.
 ## Request:
 ````
 GET /account/{username}/albums/ids
+Authorization: {}
 ````
 
 
@@ -163,6 +174,7 @@ Return the total number of albums associated with the account.
 ## Request:
 ````
 GET /account/{username}/albums/count
+Authorization: {}
 ````
 
 
@@ -173,6 +185,7 @@ Delete an Album with a given id.
 ## Request:
 ````
 DELETE /account/{username}/album/{id}
+Authorization: {}
 ````
 
 
@@ -183,6 +196,7 @@ Return the comments the user has created.
 ## Request:
 ````
 GET /account/{username}/comments
+Authorization: {}
 ````
 
 
@@ -195,6 +209,7 @@ actions that the comment endpoint allows on this end point.
 ## Request:
 ````
 GET /account/{username}/comment/{id}
+Authorization: {}
 ````
 
 
@@ -205,6 +220,7 @@ Return an array of all of the comment IDs.
 ## Request:
 ````
 GET /account/{username}/comments/ids
+Authorization: {}
 ````
 
 
@@ -215,6 +231,7 @@ Return a count of all of the comments associated with the account.
 ## Request:
 ````
 GET /account/{username}/comments/count
+Authorization: {}
 ````
 
 
@@ -226,6 +243,7 @@ created the comment.
 ## Request:
 ````
 DELETE /account/{username}/comment/{id}
+Authorization: {}
 ````
 
 
@@ -238,6 +256,7 @@ defaults to 0.
 ## Request:
 ````
 GET /account/{username}/images/{page}
+Authorization: {}
 ````
 
 
@@ -250,6 +269,7 @@ that the image endpoint with this endpoint.
 ## Request:
 ````
 GET /account/{username}/image/{id}
+Authorization: {}
 ````
 
 
@@ -260,6 +280,7 @@ Returns an array of Image IDs that are associated with the account.
 ## Request:
 ````
 GET /account/{username}/images/ids
+Authorization: {}
 ````
 
 
@@ -270,6 +291,7 @@ Returns the total number of images associated with the account.
 ## Request:
 ````
 GET /account/{username}/images/count
+Authorization: {}
 ````
 
 
@@ -280,6 +302,7 @@ Deletes an Image. This requires a delete hash rather than an ID.
 ## Request:
 ````
 DELETE /account/{username}/image/{deletehash}
+Authorization: {}
 ````
 
 
@@ -294,6 +317,7 @@ required to be logged in as the user to view this information.
 ````
 GET /account/{username}/notifications
     ?[new=true]
+Authorization: {}
 ````
 
 ### Parameters
@@ -320,6 +344,7 @@ notification. Required to be logged in to view this information.
 ````
 GET /account/{username}/notifications/messages
     ?[new=true]
+Authorization: {}
 ````
 
 ### Parameters
@@ -349,6 +374,7 @@ POST /account/{username}/message
     ?body={}
     &[subject={}]
     &[parent_id={}]
+Authorization: {}
 ````
 
 ### Parameters
@@ -384,6 +410,7 @@ logged in as that user.
 ````
 GET /account/{username}/notifications/replies
     ?[new=true]
+Authorization: {}
 ````
 
 ### Parameters
@@ -410,6 +437,7 @@ Get information about a specific album.
 ## Request:
 ````
 GET /album/{id}
+Authorization: {}
 ````
 
 # album-images
@@ -419,6 +447,7 @@ Return all of the images in the album</p>
 ## Request:
 ````
 GET /album/{id}/images
+Authorization: {}
 ````
 
 # album-image
@@ -429,6 +458,7 @@ found in `Image Endpoint` will also work.
 ## Request:
 ````
 GET /album/{id}/image/{id}
+Authorization: {}
 ````
 
 # album-upload
@@ -439,6 +469,11 @@ ids to add to the album.
 ## Request:
 ````
 POST /album/
+    ?[ids={}]
+    &[title={}]
+    &[description={}]
+    &[cover={}]
+Authorization: {}
 ````
 
 ## Parameters
@@ -478,6 +513,11 @@ Update the information of an album.</p>
 ## Request:
 ````
 PUT /album/{id}
+    ?[ids={}]
+    &[title={}]
+    &[description={}]
+    &[cover={}]
+Authorization: {}
 ````
 
 ## Parameters
@@ -518,6 +558,7 @@ the user to delete the album.
 ## Request:
 ````
 DELETE /album/{id}
+Authorization: {}
 ````
 
 # album-set-to
@@ -527,6 +568,8 @@ Sets the images for an album, removes all other images and only uses the images 
 ## Request:
 ````
 POST /album/{id}/
+    ?ids={}
+Authorization: {}
 ````
 
 ## Parameters
@@ -551,6 +594,8 @@ Takes parameter, ids[], as an array of ids to add to the album.
 ## Request:
 ````
 POST /album/{id}/add
+    ?ids={}
+Authorization: {}
 ````
 
 ## Parameters
@@ -575,6 +620,8 @@ Takes parameter, ids[], as an array of ids and removes from the labum.
 ## Request:
 ````
 DELETE /album/{id}
+    ?ids={}
+Authorization: {}
 ````
 
 ## Parameters
@@ -602,6 +649,7 @@ Get information about a specific comment.
 ## Request:
 ````
 GET /comment/{id}
+Authorization: {}
 ````
 
 # comment-create
@@ -611,6 +659,10 @@ Creates a new comment, returns the ID of the comment.
 ## Request:
 ````
 POST /comment
+    ?image_id={}
+    &comment={}
+    &[parent_id={}]
+Authorization: {}
 ````
 
   <span>Parameters</span>
@@ -645,6 +697,7 @@ Delete a comment by the given id.
 ## Request:
 ````
 DELETE /comment/{id}
+Authorization: {}
 ````
 
 
@@ -655,6 +708,7 @@ Get the comment with all of the replies for the comment.
 ## Request:
 ````
 GET /comment/{id}/replies
+Authorization: {}
 ````
 
 
@@ -665,6 +719,7 @@ Vote on a comment. The {vote} variable can only be set as "up" or "down".
 ## Request:
 ````
 POST /comment/{id}/vote/{vote}
+Authorization: {}
 ````
 
 
@@ -675,6 +730,7 @@ Report a comment for being inappropriate.
 ## Request:
 ````
 POST /comment/{id}/report
+Authorization: {}
 ````
 
 
@@ -685,6 +741,9 @@ Create a reply for the given comment.
 ## Request:
 ````
 POST /comment/{id}
+    ?image_id={}
+    &comment={}
+Authorization: {}
 ````
 
   <span>Parameters</span>
@@ -717,6 +776,7 @@ Returns the images in the gallery. For example the main gallery is
 ## Request:
 ````
 GET /gallery/{section}/{sort}/{page}
+Authorization: {}
 ````
 
 ### Parameters
@@ -751,6 +811,7 @@ View gallery images for a sub-reddit
 ## Request:
 ````
 GET /gallery/r/{subreddit}/{sort}/{page}
+Authorization: {}
 ````
 
 ### Parameters
@@ -784,7 +845,9 @@ Search the gallery with a given query string.
 
 ## Request:
 ````
-GET /gallery/search?q=string
+GET /gallery/search
+    ?q={}
+Authorization: {}
 ````
 
 ### Parameters
@@ -809,6 +872,9 @@ Add an Album or Image to the Gallery.
 ## Request:
 ````
 POST /gallery/image/{id}
+    ?title={}
+    &[terms={}]
+Authorization: {}
 ````
 
 ### Parameters
@@ -839,6 +905,7 @@ Get additional information about an album in the gallery.
 ## Request:
 ````
 GET /gallery/album/{id}
+Authorization: {}
 ````
 
 # gallery-image
@@ -848,6 +915,7 @@ Get additional information about an image in the gallery.
 ## Request:
 ````
 GET /gallery/image/{id}
+Authorization: {}
 ````
 
 # gallery-reporting
@@ -857,6 +925,7 @@ Report an Image in the gallery
 ## Request:
 ````
 POST /3/gallery/{id}/report
+Authorization: {}
 ````
 
 # gallery-votes
@@ -866,6 +935,7 @@ Get the vote information about an image
 ## Request:
 ````
 GET /gallery/album/{id}/votes
+Authorization: {}
 ````
 
 # gallery-voting
@@ -875,6 +945,7 @@ Vote for an image, up or down vote
 ## Request:
 ````
 POST /gallery/album/{id}/vote/{vote}
+Authorization: {}
 ````
 
 # gallery-comments
@@ -884,6 +955,7 @@ Comment on an image in the gallery.
 ## Request:
 ````
 GET /gallery/album/{id}/comments
+Authorization: {}
 ````
 
 # gallery-comment
@@ -894,6 +966,7 @@ the additional actions provided in the `Comment Endpoint`.
 ## Request:
 ````
 GET /gallery/album/{id}/comment/{id}
+Authorization: {}
 ````
 
 # gallery-comment-creation
@@ -903,6 +976,8 @@ Create a comment for an image.
 ## Request:
 ````
 POST /gallery/album/{id}/comment
+    ?comment={}
+Authorization: {}
 ````
 
 ### Parameters
@@ -927,6 +1002,8 @@ Reply to a comment that has been created for an image.
 ## Request:
 ````
 POST /gallery/album/{id}/comment/{id}
+    ?comment={}
+Authorization: {}
 ````
 
 ### Parameters
@@ -951,6 +1028,7 @@ List all of the IDs for the comments on an image.
 ## Request:
 ````
 GET /gallery/album/{id}/comments/ids
+Authorization: {}
 ````
 
 # gallery-comment-count
@@ -960,6 +1038,7 @@ The number of comments on an Image.
 ## Request:
 ````
 GET /gallery/album/{id}/comments/count
+Authorization: {}
 ````
 
 ------------------------------------------------------------------------------
@@ -972,6 +1051,7 @@ Get information about an image.
 ## Request:
 ````
 GET /image/{id}
+Authorization: {}
 ````
 
 # image-delete
@@ -981,6 +1061,7 @@ Delete an image with the deletehash that is returned to image owners.
 ## Request:
 ````
 DELETE /image/{deletehash}
+Authorization: {}
 ````
   
 # image-upload
@@ -991,6 +1072,13 @@ Upload a new image.
 ## Request:
 ````
 POST /image
+    ?image={}
+    &[album_id={}]
+    &[type={}]
+    &[name={}]
+    &[title={}]
+    &[description={}]
+Authorization: {}
 ````
 
 ### Parameters:
@@ -1041,6 +1129,9 @@ image you own and is associated with your account.
 ## Request:
 ````
 PUT /image/{id}
+    ?[title={}]
+    &[description={}]
+Authorization: {}
 ````
 
 ### Parameters
@@ -1074,6 +1165,7 @@ will be 3 messages returned.
 ## Request:
 ````
 GET /messages
+Authorization: {}
 ````
 
 
@@ -1085,6 +1177,7 @@ paged.
 ## Request:
 ````
 GET /messages/ids/{page}
+Authorization: {}
 ````
 
 
@@ -1095,6 +1188,7 @@ Return the total count of messages for the user.
 ## Request:
 ````
 GET /messages/count
+Authorization: {}
 ````
 
 
@@ -1105,6 +1199,7 @@ Get information about a specific message
 ## Request:
 ````
 get /message/{id}
+Authorization: {}
 ````
 
 
@@ -1117,6 +1212,7 @@ same id as the first message in the thread.
 ## Request:
 ````
 GET /message/{id}/thread
+Authorization: {}
 ````
 
 
@@ -1127,6 +1223,11 @@ Create a new message.
 ## Request:
 ````
 POST /message
+    ?recipient={}
+    &body={}
+    &[subject={}]
+    &[parent_id={}]
+Authorization: {}
 ````
 
 ### Parameters
@@ -1166,6 +1267,7 @@ Delete a message by the given ID.
 ## Request:
 ````
 DELETE /message/{id}
+Authorization: {}
 ````
 
 
@@ -1177,6 +1279,7 @@ Service.
 ## Request:
 ````
 POST /message/report/{username}
+Authorization: {}
 ````
 
 
@@ -1187,6 +1290,7 @@ Block the user from sending messages to the user that is logged in.
 ## Request:
 ````
 POST /message/block/{username}
+Authorization: {}
 ````
 
 ------------------------------------------------------------------------------
@@ -1199,6 +1303,8 @@ Get all notifications for the user that's currently logged in.
 ## Request:
 ````
 GET /notification
+    ?[new={}]
+Authorization: {}
 ````
 
 ### Parameters
@@ -1223,6 +1329,7 @@ Returns the data about a specific notification</p>
 ## Request:
 ````
 GET /notification/{id}
+Authorization: {}
 ````
 
 
@@ -1234,4 +1341,17 @@ basic notification request.
 ## Request:
 ````
 PUT /notification/{id}
+Authorization: {}
+````
+
+------------------------------------------------------------------------------
+
+# credits
+
+Check your rate limits.
+
+## Request:
+````
+GET /credits
+Authorization: {}
 ````
